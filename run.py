@@ -17,10 +17,10 @@ def update_temp():
 
 		temp = city_data['main']['temp']
 		temps.append(temp)
-		print(temp)
-	print('\n')
+	# 	print(temp)
+	# print('\n')
 
-	wb = openpyxl.load_workbook('test3.xlsx')
+	wb = openpyxl.load_workbook('City_temperatures.xlsx')
 
 	ws1 = wb['Sheet1']
 	ws1['A1'] = 'City Name'
@@ -36,11 +36,12 @@ def update_temp():
 	for i in range(1, len(city_names) + 1):
 		ws1[f'C{i+2}'] = (temps[i - 1] - 32) * (5/9)			
 	
-	wb.save('test3.xlsx')
+	wb.save('City_temperatures.xlsx')
 
 
 try:
 	update_temp()
 
+#Press CTRL + C to exit
 except KeyboardInterrupt:
 	sys.exit()
