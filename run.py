@@ -7,7 +7,7 @@ city_names = ['London', 'New Delhi', 'New York', 'Singapore']
 temps = []
 
 def update_temp():
-	threading.Timer(5.0, update_temp).start()
+	threading.Timer(5.0, update_temp).start() #Updates temperature after every 5 seconds
 	
 	for city_name in city_names:
 		url = f'https://api.openweathermap.org/data/2.5/weather?q={city_name}&appid=1694fcee8683b88cc0f0dc7845f7087e'
